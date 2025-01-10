@@ -1,6 +1,6 @@
 # OSTEP Homework Solutions
 
-Solutions to homework assignments from [Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/) by Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau.
+Solutions to homework assignments from [Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/) by Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau. Mostly C, some homeworks implemented with additional langs (Rust, Zig, etc.)
 
 ## Disclaimer
 

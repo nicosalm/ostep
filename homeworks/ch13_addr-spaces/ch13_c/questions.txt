@@ -1,0 +1,24 @@
+[4]
+- Running free -m with memory-user shows my program directly affects memory usage.
+- With ./memory-user 100, used memory increases by ~100MB and free memory decreases by the same amount. After killing the program, the memory is freed and returns to the original values. When requesting more memory than physically available (like 5000MB on a 4GB system), the system starts using swap space.
+[5]
+- The pmap tool displays the memory map of a process. That is, it shows detailed information about a process's entire address space, including permissions and memory allocation.
+
+[6]
+- To get process IDs, I used ps auxw | grep memory-user.
+- Example: My memory-user process shows up with a PID like 12345. I can also find PIDs of other processes like Firefox (4567) or Chrome (7890).
+
+[7]
+The pmap output reveals modern address spaces are complex, containing:
+- Text segment (program code)
+- Data segment (initialized data)
+- Multiple shared libraries (.so files)
+- Heap space (where my allocated array lives)
+- Stack
+- Memory-mapped regions
+- Anonymous mappings
+... Far more complex than the basic code/stack/heap model.
+
+[8]
+- Using pmap on memory-user with different allocation sizes (100MB vs 500MB) shows corresponding changes in heap size.
+- The heap region grows to accommodate the requested memory while other regions (stack, shared libraries, etc.) remain relatively constant.
